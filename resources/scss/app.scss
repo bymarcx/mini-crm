@@ -1,0 +1,248 @@
+// resources/scss/app.scss
+
+// variables
+$primary: #1B3C53;
+$light-grey: #F9F3EF;
+$body-bg: #FCFAF9;
+
+// import vendors
+@import 'bootstrap/scss/bootstrap';
+
+// fonts
+/* poppins-200 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/poppins-v23-latin-200.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* poppins-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/poppins-v23-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* poppins-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/poppins-v23-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+html,
+body {
+    font-family: "Poppins";
+}
+
+// basic font style
+h1 {
+    font-size: 42px;
+    margin-bottom: 50px;
+    color: $primary;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: $primary;
+}
+
+h3 {
+    font-size: 21px;
+    margin-bottom: 20px;
+    color: $primary;
+}
+
+p {
+    font-size: 16px;
+}
+
+// basic btn styles
+.btn-primary {
+    border: 0;
+    border-radius: 30px;
+    padding: 10px 25px;
+    background-color: $primary;
+    color: $white;
+    border: 2px solid $primary;
+
+    &:hover,
+    &:active {
+        background-color: transparent;
+        color: $primary;
+
+    }
+}
+
+.btn.btn-secondary {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: $primary;
+    position: relative;
+    font-size: 14px;
+
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $primary;
+        transition: 0.2s all ease-in-out;
+    }
+
+    &:hover,
+    &:active {
+        background-color: transparent;
+        color: $primary;
+
+        &:after {
+            transition: 0.2s all ease-in-out;
+            transform: translateY(-2px);
+        }
+    }
+
+}
+
+.btn-primary--delete {
+    background-color: #860000;
+    border: 2px solid #860000;
+
+    &:hover {
+        background-color: transparent;
+        border: 2px solid #860000;
+        color: #860000;
+    }
+}
+
+// navbar
+.navbar {
+    background-color: $light-grey;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+
+    .navbar-brand {
+        font-size: 32px;
+        font-weight: 600;
+        color: $primary;
+    }
+}
+
+// form
+form {
+
+    input,
+    .form-control {
+        width: 100%;
+        padding: 10px 25px;
+        border-radius: 25px;
+        border: 1px solid lightgrey;
+        margin-bottom: 20px;
+        background-color: white;
+    }
+
+    textarea.form-control {
+        border-radius: 20px;
+    }
+}
+
+// form - searchbar
+.searchbar {
+    max-width: 40%;
+    display: flex;
+    margin-bottom: 30px;
+
+    input {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    button {
+        border: 0;
+        border-radius: 30px;
+        padding: 10px 25px;
+        background-color: $primary;
+        color: $white;
+        margin-left: 15px;
+        border: 2px solid $primary;
+
+        &:hover,
+        &:active {
+            background-color: transparent;
+            color: $primary;
+
+        }
+    }
+}
+
+// table style
+table {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+
+    thead {
+        border-bottom: 1px solid #333;
+
+        th {
+            padding: 15px 0 !important;
+            opacity: 0.5;
+            font-size: 14px;
+            color: $primary;
+        }
+    }
+
+    tr {
+
+        td {
+            padding: 15px 0 !important;
+            vertical-align: middle;
+            font-size: 14px;
+        }
+
+        td:first-child {
+            font-size: 16px;
+            font-weight: 600;
+            color: $primary
+        }
+
+        td:last-child {
+            text-align: end;
+        }
+    }
+}
+
+// /show styles
+.infos,
+.notes {
+    background-color: $white;
+    border-radius: 20px;
+    padding: 30px 40px;
+
+    p {
+        margin-bottom: 5px;
+    }
+}
+
+.actions {
+    display: flex;
+    margin-top: 50px;
+
+    .btn {
+        margin-right: $grid-gutter-width;
+    }
+}
